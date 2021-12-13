@@ -16,21 +16,18 @@ const Item = styled(Paper)(({ theme }) => ({
 export default function Notes() {
     return (
         <Container maxWidth="md">
-            <SearchNote />
-            <NoteList />
             <Grid container spacing={2}>
                 <Grid item xs={8}>
-                    <Item>xs=8</Item>
+                    <Item>
+                        <SearchNote />
+                    </Item>
                 </Grid>
+
                 <Grid item xs={4}>
-                    <Item>xs=4</Item>
+                    <Item>title</Item>
                 </Grid>
-                <Grid item xs={4}>
-                    <Item>xs=4</Item>
-                </Grid>
-                <Grid item xs={8}>
-                    <Item>xs=8</Item>
-                </Grid>
+
+                <NoteList />
             </Grid>
         </Container>
     )
