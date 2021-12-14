@@ -7,3 +7,11 @@ h1 {
   font-size: 1.5rem;
   margin: 0;
 }
+
+.notes {
+  margin-top: 1rem;
+
+  > div {
+    margin: 0 0.3rem;
+  }
+}

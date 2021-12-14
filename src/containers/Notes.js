@@ -18,8 +18,9 @@ export default function Notes() {
                     <SearchNote />
                 </Grid>
 
-                <NoteList />
             </Grid>
+
+            <NoteList />
         </Container>
     )
 }
