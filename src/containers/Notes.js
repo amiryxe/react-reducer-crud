@@ -9,7 +9,9 @@ import './Notes.scss';
 export default function Notes() {
     return (
         <Container maxWidth="md">
-            <Grid container>
+            <Grid container style={{
+                alignItems: 'center',
+            }}>
                 <Grid item xs={4}>
                     <Title />
                 </Grid>
@@ -17,7 +19,6 @@ export default function Notes() {
                 <Grid item xs={8}>
                     <SearchNote />
                 </Grid>
-
             </Grid>
 
             <NoteList />

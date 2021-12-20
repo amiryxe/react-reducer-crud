@@ -22,7 +22,7 @@ export default function NoteItem() {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button size="small">View More</Button>
+                <Button size="small">More</Button>
             </CardActions>
         </Card>
     )
