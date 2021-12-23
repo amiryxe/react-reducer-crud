@@ -1,17 +1,14 @@
 import { useState } from "react";
 import MainContext from "./mainContext";
 
-export default MainState(){
+export default function MainState({ children }) {
     const [state, setState] = useState({
-        isLoggedIn: false,
-        user: {},
-        isLoading: false,
-        error: null
+        //...
     });
 
     return (
-        <MainContext.Provider value={[state, setState]}>
-            {props.children}
+        <MainContext.Provider value={{ state, setState }}>
+            {children}
         </MainContext.Provider>
     );
 }
