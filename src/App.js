@@ -1,10 +1,13 @@
 import Notes from './containers/Notes';
+import MainState from './context/MainState';
 
 function App() {
   return (
-    <div className="App">
-      <Notes />
-    </div>
+    <MainState>
+      <div className="App">
+        <Notes />
+      </div>
+    </MainState>
   );
 }
 
