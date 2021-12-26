@@ -3,20 +3,10 @@ import MainContext from "./mainContext";
 
 export default function MainState({ children }) {
     const [state, setState] = useState({
-        //...
+        title: 'test'
     });
 
-    const reducer = (state, action) => {
-        switch (action.type) {
-            case "":
-                return {
-                    ...state,
-                    ...action.payload
-                };
-            default:
-                return state;
-        }
-    };
+    // reducer here
 
     return (
         <MainContext.Provider value={{ state, setState }}>
