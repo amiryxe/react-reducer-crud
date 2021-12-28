@@ -1,7 +1,11 @@
 import { useReducer } from "react";
 import MainContext from "./mainContext";
 
-function reducer(state, action) {
+const initialState = {
+    count: 0
+};
+
+const reducer = (state, action) => {
     switch (action.type) {
         case 'increment':
             return { count: state.count + 1 };
@@ -12,11 +16,12 @@ function reducer(state, action) {
     }
 }
 
+
 export default function MainState({ children }) {
     const [state, dispatch] = useReducer(reducer, initialState);
 
     return (
-        <MainContext.Provider value={{ state }}>
+        <MainContext.Provider value={{ state, dispatch }}>
             {children}
         </MainContext.Provider>
     );
