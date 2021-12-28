@@ -1,15 +1,22 @@
-import { useState, useReducer } from "react";
+import { useReducer } from "react";
 import MainContext from "./mainContext";
 
-export default function MainState({ children }) {
-    const [state, setState] = useState({
-        title: 'test'
-    });
+function reducer(state, action) {
+    switch (action.type) {
+        case 'increment':
+            return { count: state.count + 1 };
+        case 'decrement':
+            return { count: state.count - 1 };
+        default:
+            throw new Error();
+    }
+}
 
-    // reducer here
+export default function MainState({ children }) {
+    const [state, dispatch] = useReducer(reducer, initialState);
 
     return (
-        <MainContext.Provider value={{ state, setState }}>
+        <MainContext.Provider value={{ state }}>
             {children}
         </MainContext.Provider>
     );
