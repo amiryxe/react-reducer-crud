@@ -15,15 +15,12 @@ const style = {
     p: 4,
 };
 
-export default function NoteDetail() {
-    const [open, setOpen] = useState(false);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
-
+export default function NoteDetail({ status, setStatus }) {
+    const handleClose = () => setStatus(false);
 
     return (
         <Modal
-            open={open}
+            open={status}
             onClose={handleClose}
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"

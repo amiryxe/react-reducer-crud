@@ -27,10 +27,7 @@ export default function NoteItem() {
             </CardContent>
             <CardActions>
                 <Button size="small" onClick={() => setShowModal(true)}>More</Button>
-                {
-                    showModal &&
-                    <NoteDetail />
-                }
+                <NoteDetail status={showModal} setStatus={setShowModal} />
             </CardActions>
         </Card>
     )
