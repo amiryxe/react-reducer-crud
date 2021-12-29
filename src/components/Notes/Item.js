@@ -1,10 +1,14 @@
+import { useState } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import NoteDetail from './Detail';
 
 export default function NoteItem() {
+    const [showModal, setShowModal] = useState(false);
+
     return (
         <Card sx={{ minWidth: 275 }}>
             <CardContent>
@@ -22,7 +26,11 @@ export default function NoteItem() {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button size="small">More</Button>
+                <Button size="small" onClick={() => setShowModal(true)}>More</Button>
+                {
+                    showModal &&
+                    <NoteDetail />
+                }
             </CardActions>
         </Card>
     )
