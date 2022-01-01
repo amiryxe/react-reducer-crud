@@ -29,6 +29,12 @@ export default function AddNote() {
 
     const handleClose = () => setShowModal(false);
 
+    const submitAddNoteHandler = e => {
+        e.preventDefault();
+
+        console.log('submit')
+    }
+
     return (
         <>
             <Fab color="primary" aria-label="add" onClick={() => setShowModal(true)}>
@@ -41,7 +47,7 @@ export default function AddNote() {
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description">
                 <Box sx={style}>
-                    <form action="">
+                    <form action="" onSubmit={submitAddNoteHandler}>
                         <TextField
                             id="outlined-basic"
                             label="Title"
@@ -59,7 +65,7 @@ export default function AddNote() {
                             onChange={(e) => setValues({ ...values, summary: e.target.value })}
                         />
 
-                        <Button variant="contained" color="primary">
+                        <Button variant="contained" color="primary" type="submit">
                             Submit
                         </Button>
                     </form>
