@@ -3,9 +3,17 @@ import Fab from '@mui/material/Fab';
 import AddIcon from '@mui/icons-material/Add';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import { Button } from '@mui/material';
 
 export default function AddNote() {
     const [showModal, setShowModal] = useState(false);
+    const [values, setValues] = useState({
+        title: '',
+        subtitle: '',
+        summary: '',
+        date: '',
+    });
 
     const style = {
         position: 'absolute',
@@ -33,7 +41,28 @@ export default function AddNote() {
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description">
                 <Box sx={style}>
-                    test
+                    <form action="">
+                        <TextField
+                            id="outlined-basic"
+                            label="Title"
+                            variant="outlined"
+                            value={values.title}
+                            onChange={(e) => setValues({ ...values, title: e.target.value })}
+                        />
+
+                        <TextField
+                            id="outlined-multiline-flexible"
+                            label="Summary"
+                            multiline
+                            maxRows={4}
+                            value={values.summary}
+                            onChange={(e) => setValues({ ...values, summary: e.target.value })}
+                        />
+
+                        <Button variant="contained" color="primary">
+                            Submit
+                        </Button>
+                    </form>
                 </Box>
             </Modal>
         </>
