@@ -49,6 +49,7 @@ export default function AddNote() {
                 <Box sx={style}>
                     <form action="" onSubmit={submitAddNoteHandler}>
                         <TextField
+                            style={{ width: '100%' }}
                             id="outlined-basic"
                             label="Title"
                             variant="outlined"
@@ -57,6 +58,7 @@ export default function AddNote() {
                         />
 
                         <TextField
+                            style={{ width: '100%' }}
                             id="outlined-multiline-flexible"
                             label="Summary"
                             multiline
