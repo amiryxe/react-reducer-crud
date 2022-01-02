@@ -47,9 +47,12 @@ export default function AddNote() {
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description">
                 <Box sx={style}>
-                    <form action="" onSubmit={submitAddNoteHandler}>
+                    <form action="" onSubmit={submitAddNoteHandler} style={{
+                        display: 'grid',
+                        gridTemplateColumns: '1fr',
+                        gridGap: '1rem',
+                    }}>
                         <TextField
-                            style={{ width: '100%' }}
                             id="outlined-basic"
                             label="Title"
                             variant="outlined"
@@ -58,7 +61,6 @@ export default function AddNote() {
                         />
 
                         <TextField
-                            style={{ width: '100%' }}
                             id="outlined-multiline-flexible"
                             label="Summary"
                             multiline
