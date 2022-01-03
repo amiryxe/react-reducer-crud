@@ -12,6 +12,9 @@ import DatePicker from '@mui/lab/DatePicker';
 
 export default function AddNote() {
     const [showModal, setShowModal] = useState(false);
+    const [value, setValue] = useState(new Date());
+
+
     const [values, setValues] = useState({
         title: '',
         subtitle: '',
