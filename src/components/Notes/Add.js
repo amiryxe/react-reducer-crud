@@ -5,6 +5,10 @@ import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { Button } from '@mui/material';
+import AdapterDateFns from '@mui/lab/AdapterDateFns';
+import LocalizationProvider from '@mui/lab/LocalizationProvider';
+import DatePicker from '@mui/lab/DatePicker';
+
 
 export default function AddNote() {
     const [showModal, setShowModal] = useState(false);
@@ -68,6 +72,18 @@ export default function AddNote() {
                             value={values.summary}
                             onChange={(e) => setValues({ ...values, summary: e.target.value })}
                         />
+
+                        <LocalizationProvider dateAdapter={AdapterDateFns}>
+                            <DatePicker
+                                label="Basic example"
+                                value={value}
+                                onChange={(newValue) => {
+                                    setValue(newValue);
+                                }}
+                                renderInput={(params) => <TextField {...params} />}
+                            />
+                        </LocalizationProvider>
+
 
                         <Button variant="contained" color="primary" type="submit">
                             Submit
