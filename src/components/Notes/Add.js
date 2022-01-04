@@ -84,7 +84,7 @@ export default function AddNote() {
 
                         <LocalizationProvider dateAdapter={AdapterDateFns} locale={faIrLocale}>
                             <DatePicker
-                                label="Basic example"
+                                label="Date and time"
                                 value={value}
                                 onChange={(newValue) => {
                                     setValue(newValue);
