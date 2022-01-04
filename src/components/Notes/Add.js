@@ -8,6 +8,7 @@ import { Button } from '@mui/material';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import DatePicker from '@mui/lab/DatePicker';
+import faIrLocale from 'date-fns/locale/fa-IR';
 
 
 export default function AddNote() {
@@ -76,7 +77,7 @@ export default function AddNote() {
                             onChange={(e) => setValues({ ...values, summary: e.target.value })}
                         />
 
-                        <LocalizationProvider dateAdapter={AdapterDateFns}>
+                        <LocalizationProvider dateAdapter={AdapterDateFns} locale={faIrLocale}>
                             <DatePicker
                                 label="Basic example"
                                 value={value}
