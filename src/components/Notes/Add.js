@@ -61,7 +61,6 @@ export default function AddNote() {
                         gridGap: '1.5rem',
                     }}>
                         <TextField
-                            id="outlined-basic"
                             label="Title"
                             variant="outlined"
                             value={values.title}
@@ -69,7 +68,6 @@ export default function AddNote() {
                         />
 
                         <TextField
-                            id="outlined-basic"
                             label="Subtitle"
                             variant="outlined"
                             value={values.subject}
@@ -77,7 +75,6 @@ export default function AddNote() {
                         />
 
                         <TextField
-                            id="outlined-multiline-flexible"
                             label="Summary"
                             multiline
                             maxRows={4}
