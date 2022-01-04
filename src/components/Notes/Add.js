@@ -58,7 +58,7 @@ export default function AddNote() {
                     <form action="" onSubmit={submitAddNoteHandler} style={{
                         display: 'grid',
                         gridTemplateColumns: '1fr',
-                        gridGap: '1rem',
+                        gridGap: '1.5rem',
                     }}>
                         <TextField
                             id="outlined-basic"
@@ -66,6 +66,14 @@ export default function AddNote() {
                             variant="outlined"
                             value={values.title}
                             onChange={(e) => setValues({ ...values, title: e.target.value })}
+                        />
+
+                        <TextField
+                            id="outlined-basic"
+                            label="Subtitle"
+                            variant="outlined"
+                            value={values.subject}
+                            onChange={(e) => setValues({ ...values, subtitle: e.target.value })}
                         />
 
                         <TextField
