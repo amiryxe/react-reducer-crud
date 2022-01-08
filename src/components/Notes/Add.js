@@ -40,7 +40,14 @@ export default function AddNote() {
     const submitAddNoteHandler = e => {
         e.preventDefault();
 
-        console.log('submit')
+        const payload = {
+            title: values.title,
+            subtitle: values.subtitle,
+            summary: values.summary,
+            date: values.date,
+        };
+
+        console.log(payload)
     }
 
     return (
