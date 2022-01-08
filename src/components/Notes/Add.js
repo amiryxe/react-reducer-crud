@@ -13,7 +13,7 @@ import faIrLocale from 'date-fns/locale/fa-IR';
 
 export default function AddNote() {
     const [showModal, setShowModal] = useState(false);
-    const [value, setValue] = useState(new Date());
+    const [date, setDate] = useState(new Date());
 
 
     const [values, setValues] = useState({
@@ -44,7 +44,7 @@ export default function AddNote() {
             title: values.title,
             subtitle: values.subtitle,
             summary: values.summary,
-            date: values.date,
+            date: date,
         };
 
         console.log(payload)
@@ -92,9 +92,9 @@ export default function AddNote() {
                         <LocalizationProvider dateAdapter={AdapterDateFns} locale={faIrLocale}>
                             <DatePicker
                                 label="Date and time"
-                                value={value}
+                                value={date}
                                 onChange={(newValue) => {
-                                    setValue(newValue);
+                                    setDate(newValue);
                                 }}
                                 renderInput={(params) => <TextField {...params} />}
                             />
