@@ -7,9 +7,8 @@ import TextField from '@mui/material/TextField';
 import { Button } from '@mui/material';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import DatePicker from '@mui/lab/DatePicker';
+import DateTimePicker from '@mui/lab/DateTimePicker';
 import faIrLocale from 'date-fns/locale/fa-IR';
-
 
 export default function AddNote() {
     const [showModal, setShowModal] = useState(false);
@@ -90,7 +89,7 @@ export default function AddNote() {
                         />
 
                         <LocalizationProvider dateAdapter={AdapterDateFns} locale={faIrLocale}>
-                            <DatePicker
+                            <DateTimePicker
                                 label="Date and time"
                                 value={date}
                                 onChange={(newValue) => {
