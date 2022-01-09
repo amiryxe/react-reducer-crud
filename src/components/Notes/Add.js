@@ -13,7 +13,7 @@ import faIrLocale from 'date-fns/locale/fa-IR';
 
 export default function AddNote() {
     const [showModal, setShowModal] = useState(false);
-    const [date, setDate] = useState(new Date().toString());
+    const [date, setDate] = useState(new Date().toLocaleDateString());
 
 
     const [values, setValues] = useState({
@@ -94,12 +94,11 @@ export default function AddNote() {
                                 label="Date and time"
                                 value={date}
                                 onChange={(newValue) => {
-                                    setDate(newValue.toString());
+                                    setDate(newValue.toLocaleDateString());
                                 }}
                                 renderInput={(params) => <TextField {...params} />}
                             />
                         </LocalizationProvider>
-
 
                         <Button variant="contained" color="primary" type="submit">
                             Submit
