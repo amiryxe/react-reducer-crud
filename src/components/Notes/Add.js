@@ -51,7 +51,11 @@ export default function AddNote() {
 
     return (
         <>
-            <Fab color="primary" aria-label="add" onClick={() => setShowModal(true)}>
+            <Fab
+                className="add-note-btn"
+                color="primary"
+                aria-label="add"
+                onClick={() => setShowModal(true)}>
                 <AddIcon />
             </Fab>
 
