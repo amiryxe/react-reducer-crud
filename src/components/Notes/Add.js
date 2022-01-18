@@ -51,11 +51,7 @@ export default function AddNote() {
 
     return (
         <>
-            <Fab
-                className="add-note-btn"
-                color="primary"
-                aria-label="add"
-                onClick={() => setShowModal(true)}>
+            <Fab color="primary" aria-label="add" onClick={() => setShowModal(true)}>
                 <AddIcon />
             </Fab>
 
@@ -92,16 +88,14 @@ export default function AddNote() {
                             onChange={(e) => setValues({ ...values, summary: e.target.value })}
                         />
 
-                        <LocalizationProvider dateAdapter={AdapterDateFns} locale={faIrLocale}>
-                            <DateTimePicker
-                                label="Date and time"
-                                value={date}
-                                onChange={(newValue) => {
-                                    setDate(newValue.toLocaleDateString());
-                                }}
-                                renderInput={(params) => <TextField {...params} />}
-                            />
-                        </LocalizationProvider>
+                        <DateTimePicker
+                            label="Date and time"
+                            value={date}
+                            onChange={(newValue) => {
+                                setDate(newValue.toLocaleDateString());
+                            }}
+                            renderInput={(params) => <TextField {...params} />}
+                        />
 
                         <Button variant="contained" color="primary" type="submit">
                             Submit
