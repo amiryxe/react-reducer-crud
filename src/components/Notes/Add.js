@@ -13,7 +13,6 @@ export default function AddNote() {
     const [showModal, setShowModal] = useState(false);
     const [date, setDate] = useState(new Date().toLocaleDateString());
 
-
     const [values, setValues] = useState({
         title: '',
         subtitle: '',
