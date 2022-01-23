@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
 import MainContext from "./mainContext";
 
 const initialState = {
@@ -18,10 +18,17 @@ const reducer = (state, action) => {
 
 
 export default function MainState({ children }) {
+    const [noteList, setNoteList] = useState(null);
+
     const [state, dispatch] = useReducer(reducer, initialState);
 
     return (
-        <MainContext.Provider value={{ state, dispatch }}>
+        <MainContext.Provider value={{
+            state,
+            dispatch,
+            noteList,
+            setNoteList
+        }}>
             {children}
         </MainContext.Provider>
     );
