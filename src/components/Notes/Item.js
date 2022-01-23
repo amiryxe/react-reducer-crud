@@ -6,23 +6,24 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import NoteDetail from './Detail';
 
-export default function NoteItem() {
+export default function NoteItem({ data }) {
     const [showModal, setShowModal] = useState(false);
+    const { title, date, description, subtitle } = data;
 
     return (
         <Card sx={{ minWidth: 275 }}>
             <CardContent>
                 <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                    note date is here
+                    {date}
                 </Typography>
                 <Typography variant="h5" component="div">
-                    Note title here
+                    {title}
                 </Typography>
                 <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                    subtitle or category here
+                    {subtitle}
                 </Typography>
                 <Typography variant="body2">
-                    summary of note here
+                    {description}
                 </Typography>
             </CardContent>
             <CardActions>
