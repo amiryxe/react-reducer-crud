@@ -36,7 +36,7 @@ export default function MainState({ children }) {
 
     return (
         <MainContext.Provider value={{
-            state,
+            noteList: state.noteList,
             dispatch,
         }}>
             {children}
