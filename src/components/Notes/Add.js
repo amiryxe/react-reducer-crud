@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import Fab from '@mui/material/Fab';
 import AddIcon from '@mui/icons-material/Add';
 import Modal from '@mui/material/Modal';
@@ -8,10 +8,12 @@ import { Button } from '@mui/material';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import DateTimePicker from '@mui/lab/DateTimePicker';
+import MainContext from '../../context/mainContext';
 
 export default function AddNote() {
     const [showModal, setShowModal] = useState(false);
     const [date, setDate] = useState(new Date().toLocaleDateString());
+    const { dispatch } = useContext(MainContext);
 
     const [values, setValues] = useState({
         title: '',
@@ -38,11 +40,14 @@ export default function AddNote() {
         e.preventDefault();
 
         const payload = {
+            id: Math.random(),
             title: values.title,
             subtitle: values.subtitle,
-            summary: values.summary,
+            description: values.summary,
             date: date,
         };
+
+        dispatch({ type: 'ADD_NOTE', payload });
 
         console.log(payload)
     }

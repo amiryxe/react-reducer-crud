@@ -23,7 +23,7 @@ const initialState = {
 const reducer = (state, action) => {
     switch (action.type) {
         case 'ADD_NOTE':
-            return { count: state.count + 1 };
+            return { noteList: [...state.noteList, action.payload] };
         case 'decrement':
             return { count: state.count - 1 };
         default:
