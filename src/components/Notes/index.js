@@ -7,7 +7,11 @@ export default function NoteList() {
     const { noteList } = useContext(MainContext);
 
     return (
-        <Grid container className="notes" spacing={2}>
+        <Grid
+            container
+            className="notes"
+            style={{ marginTop: '3rem' }}
+            spacing={2}>
             {
                 noteList.map(item => (
                     <Grid item xs={4} key={item.id}>
