@@ -28,6 +28,7 @@ export default function NoteItem({ data }) {
             </CardContent>
             <CardActions>
                 <Button size="small" onClick={() => setShowModal(true)}>More</Button>
+                <Button size="small" color="error" onClick={() => setShowModal(true)}>Delete</Button>
                 <NoteDetail status={showModal} setStatus={setShowModal} />
             </CardActions>
         </Card>
