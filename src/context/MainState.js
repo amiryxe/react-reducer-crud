@@ -25,7 +25,7 @@ const reducer = (state, action) => {
         case 'ADD_NOTE':
             return { noteList: [...state.noteList, action.payload] };
         case 'DELETE_NOTE':
-            return { noteList: state.noteList.filter(item => item.id !== action.payload) };
+            return { noteList: [...state.noteList.filter(item => item.id !== action.payload)] };
         default:
             throw new Error();
     }

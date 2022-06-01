@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
@@ -10,14 +10,19 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import MainContext from '../../context/mainContext';
 
 export default function NoteItem({ data }) {
     const [showModal, setShowModal] = useState(false);
     const [showDeleteAlert, setShowDeleteAlert] = useState(false)
     const { id, title, date, description, subtitle } = data;
 
+    const { dispatch } = useContext(MainContext)
+
     const handleDeleteNote = () => {
         console.log(id)
+        dispatch({ type: 'DELETE_NOTE', payload: id })
+        setShowDeleteAlert(false)
     }
 
     return (
