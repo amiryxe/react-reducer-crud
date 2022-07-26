@@ -5,14 +5,14 @@ const initialState = {
     noteList: [
         {
             id: 1,
-            date: '2022-01-05',
+            date: '2022/01/05',
             title: 'Note Title 1',
             subtitle: 'Note subtitle 1',
             description: 'Note Description 1',
         },
         {
             id: 2,
-            date: '2022-02-07',
+            date: '2022/02/07',
             title: 'Note Title 2',
             subtitle: 'Note subtitle 2',
             description: 'Note Description 2',
