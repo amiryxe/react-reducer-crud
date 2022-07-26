@@ -5,8 +5,6 @@ import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { Button } from '@mui/material';
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import DateTimePicker from '@mui/lab/DateTimePicker';
 import MainContext from '../../context/mainContext';
 
@@ -91,16 +89,14 @@ export default function AddNote() {
                             onChange={(e) => setValues({ ...values, summary: e.target.value })}
                         />
 
-                        <LocalizationProvider dateAdapter={AdapterDateFns}>
-                            <DateTimePicker
-                                label="Date and time"
-                                value={date}
-                                onChange={(newValue) => {
-                                    setDate(newValue.toLocaleDateString());
-                                }}
-                                renderInput={(params) => <TextField {...params} />}
-                            />
-                        </LocalizationProvider>
+                        <DateTimePicker
+                            label="Date and time"
+                            value={date}
+                            onChange={(newValue) => {
+                                setDate(newValue.toLocaleDateString());
+                            }}
+                            renderInput={(params) => <TextField {...params} />}
+                        />
 
                         <Button variant="contained" color="primary" type="submit">
                             Submit
