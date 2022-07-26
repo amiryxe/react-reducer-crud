@@ -34,7 +34,7 @@ export default function NoteItem({ data }) {
                 aria-describedby="alert-dialog-description"
             >
                 <DialogTitle id="alert-dialog-title">
-                    {"Are you sure to delete note?"}
+                    Are you sure to delete note?
                 </DialogTitle>
                 <DialogContent>
                     <DialogContentText id="alert-dialog-description">
