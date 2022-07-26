@@ -49,7 +49,7 @@ export default function AddNote() {
 
         dispatch({ type: 'ADD_NOTE', payload });
 
-        console.log(payload)
+        setShowModal(false)
     }
 
     return (
