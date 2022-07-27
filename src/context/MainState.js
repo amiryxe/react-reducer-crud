@@ -2,27 +2,15 @@ import { useReducer } from "react";
 import MainContext from "./mainContext";
 
 const initialState = {
-    noteList: [
-        {
-            id: 1,
-            date: '2022/01/05',
-            title: 'Note Title 1',
-            subtitle: 'Note subtitle 1',
-            description: 'Note Description 1',
-        },
-        {
-            id: 2,
-            date: '2022/02/07',
-            title: 'Note Title 2',
-            subtitle: 'Note subtitle 2',
-            description: 'Note Description 2',
-        }
-    ]
+    noteList: localStorage.getItem('noteList') ? JSON.parse(localStorage.getItem('noteList')) : []
 };
+
+console.log(initialState);
 
 const reducer = (state, action) => {
     switch (action.type) {
         case 'ADD_NOTE':
+            localStorage.setItem('noteList', JSON.stringify([...state.noteList, action.payload]));
             return { noteList: [...state.noteList, action.payload] };
         case 'DELETE_NOTE':
             return { noteList: [...state.noteList.filter(item => item.id !== action.payload)] };

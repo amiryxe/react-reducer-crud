@@ -46,8 +46,6 @@ export default function AddNote() {
         };
 
         dispatch({ type: 'ADD_NOTE', payload });
-        localStorage.setItem('noteList', JSON.stringify(payload));
-
         setShowModal(false)
     }
 
