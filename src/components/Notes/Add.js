@@ -107,7 +107,7 @@ export default function AddNote() {
                         />
 
                         <Button variant="contained" color="primary" type="submit">
-                            Submit
+                            Add Note
                         </Button>
                     </form>
                 </Box>
