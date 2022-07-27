@@ -8,6 +8,18 @@ import { Button } from '@mui/material';
 import DateTimePicker from '@mui/lab/DateTimePicker';
 import MainContext from '../../context/mainContext';
 
+const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    boxShadow: 24,
+    borderRadius: 2,
+    p: 4,
+};
+
 export default function AddNote() {
     const [showModal, setShowModal] = useState(false);
     const [date, setDate] = useState(new Date().toLocaleDateString());
@@ -19,18 +31,6 @@ export default function AddNote() {
         summary: '',
         date: '',
     });
-
-    const style = {
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        width: 400,
-        bgcolor: 'background.paper',
-        boxShadow: 24,
-        borderRadius: 2,
-        p: 4,
-    };
 
     const handleClose = () => setShowModal(false);
 
