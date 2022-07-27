@@ -46,6 +46,15 @@ export default function AddNote() {
         };
 
         dispatch({ type: 'ADD_NOTE', payload });
+
+        // reset form
+        setValues({
+            title: '',
+            subtitle: '',
+            summary: '',
+            date: '',
+        });
+
         setShowModal(false)
     }
 
