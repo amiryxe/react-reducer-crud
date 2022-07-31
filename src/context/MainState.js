@@ -5,8 +5,6 @@ const initialState = {
     noteList: localStorage.getItem('noteList') ? JSON.parse(localStorage.getItem('noteList')) : []
 };
 
-console.log(initialState);
-
 const reducer = (state, action) => {
     switch (action.type) {
         case 'ADD_NOTE':

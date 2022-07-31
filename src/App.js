@@ -4,9 +4,7 @@ import MainState from './context/MainState';
 function App() {
   return (
     <MainState>
-      <div className="App">
-        <Notes />
-      </div>
+      <Notes />
     </MainState>
   );
 }
