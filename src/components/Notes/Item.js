@@ -43,7 +43,7 @@ export default function NoteItem({ data }) {
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={() => setShowDeleteAlert(false)}>Cancel</Button>
-                    <Button onClick={handleDeleteNote} autoFocus>
+                    <Button color="error" onClick={handleDeleteNote} autoFocus>
                         OK
                     </Button>
                 </DialogActions>
