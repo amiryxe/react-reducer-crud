@@ -1,6 +1,10 @@
 import { useReducer } from "react";
 import MainContext from "./mainContext";
 
+const saveToLocalStorage = (arr) => {
+    localStorage.setItem('noteList', JSON.stringify(arr));
+}
+
 const initialState = {
     noteList: localStorage.getItem('noteList') ? JSON.parse(localStorage.getItem('noteList')) : []
 };
@@ -8,10 +12,10 @@ const initialState = {
 const reducer = (state, action) => {
     switch (action.type) {
         case 'ADD_NOTE':
-            localStorage.setItem('noteList', JSON.stringify([...state.noteList, action.payload]));
+            saveToLocalStorage([...state.noteList, action.payload]);
             return { noteList: [...state.noteList, action.payload] };
         case 'DELETE_NOTE':
-            localStorage.setItem('noteList', JSON.stringify(state.noteList.filter(note => note.id !== action.payload)));
+            saveToLocalStorage(state.noteList.filter(note => note.id !== action.payload));
             return { noteList: [...state.noteList.filter(item => item.id !== action.payload)] };
         default:
             throw new Error();
