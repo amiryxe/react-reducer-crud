@@ -11,6 +11,7 @@ const reducer = (state, action) => {
             localStorage.setItem('noteList', JSON.stringify([...state.noteList, action.payload]));
             return { noteList: [...state.noteList, action.payload] };
         case 'DELETE_NOTE':
+            localStorage.setItem('noteList', JSON.stringify(state.noteList.filter(note => note.id !== action.payload)));
             return { noteList: [...state.noteList.filter(item => item.id !== action.payload)] };
         default:
             throw new Error();
