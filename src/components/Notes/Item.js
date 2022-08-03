@@ -14,7 +14,7 @@ export default function NoteItem({ data }) {
 
     return (
         <Card sx={{ minWidth: 275 }}>
-            <RemoveDialog />
+            <RemoveDialog {...{ id, title, showDeleteAlert, setShowDeleteAlert }} />
 
             <CardContent>
                 <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
