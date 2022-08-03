@@ -11,7 +11,6 @@ export default function RemoveDialog({ id, title, showDeleteAlert, setShowDelete
     const { dispatch } = useContext(MainContext)
 
     const handleDeleteNote = () => {
-        console.log(id)
         dispatch({ type: 'DELETE_NOTE', payload: id })
         setShowDeleteAlert(false)
     }
