@@ -1,10 +1,10 @@
-import NoteList from '../components/Notes/index';
-import SearchNote from '../components/Notes/Search';
-import Title from '../components/Notes/Title';
-import Grid from '@mui/material/Grid';
-import Container from '@mui/material/Container';
-import AddNote from '../components/Notes/Add';
-import './Notes.scss';
+import NoteList from '../components/Notes/index'
+import SearchNote from '../components/Notes/Search'
+import Title from '../components/Notes/Title'
+import Grid from '@mui/material/Grid'
+import Container from '@mui/material/Container'
+import AddNote from '../components/Notes/Add'
+import './Notes.scss'
 
 export default function Notes() {
     return (
