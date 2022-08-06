@@ -13,11 +13,17 @@ export default function NoteList() {
             style={{ marginTop: '3rem' }}
             spacing={2}>
             {
-                noteList.map(item => (
-                    <Grid item xs={4} key={item.id}>
-                        <NoteItem data={item} />
-                    </Grid>
-                ))
+                noteList.length > 0 ?
+                    noteList.map(item => (
+                        <Grid item xs={4} key={item.id}>
+                            <NoteItem data={item} />
+                        </Grid>
+                    ))
+                    :
+                    <div>
+                        <h3>You have no notes yet</h3>
+                        <p>Click the blue add button to create a new note</p>
+                    </div>
             }
         </Grid>
     )
