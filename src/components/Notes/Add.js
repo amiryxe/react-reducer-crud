@@ -56,56 +56,53 @@ export default function AddNote({ showModal, setShowModal }) {
     }
 
     return (
-        <>
+        <Modal
+            open={showModal}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description">
+            <Box sx={style}>
+                <form action="" onSubmit={submitAddNoteHandler} style={{
+                    display: 'grid',
+                    gridTemplateColumns: '1fr',
+                    gridGap: '1.5rem',
+                }}>
+                    <TextField
+                        label="Title"
+                        variant="outlined"
+                        value={values.title}
+                        onChange={(e) => setValues({ ...values, title: e.target.value })}
+                    />
 
-            <Modal
-                open={showModal}
-                onClose={handleClose}
-                aria-labelledby="modal-modal-title"
-                aria-describedby="modal-modal-description">
-                <Box sx={style}>
-                    <form action="" onSubmit={submitAddNoteHandler} style={{
-                        display: 'grid',
-                        gridTemplateColumns: '1fr',
-                        gridGap: '1.5rem',
-                    }}>
-                        <TextField
-                            label="Title"
-                            variant="outlined"
-                            value={values.title}
-                            onChange={(e) => setValues({ ...values, title: e.target.value })}
-                        />
+                    <TextField
+                        label="Subtitle"
+                        variant="outlined"
+                        value={values.subject}
+                        onChange={(e) => setValues({ ...values, subtitle: e.target.value })}
+                    />
 
-                        <TextField
-                            label="Subtitle"
-                            variant="outlined"
-                            value={values.subject}
-                            onChange={(e) => setValues({ ...values, subtitle: e.target.value })}
-                        />
+                    <TextField
+                        label="Summary"
+                        multiline
+                        maxRows={4}
+                        value={values.summary}
+                        onChange={(e) => setValues({ ...values, summary: e.target.value })}
+                    />
 
-                        <TextField
-                            label="Summary"
-                            multiline
-                            maxRows={4}
-                            value={values.summary}
-                            onChange={(e) => setValues({ ...values, summary: e.target.value })}
-                        />
+                    <DateTimePicker
+                        label="Date and time"
+                        value={date}
+                        onChange={(newValue) => {
+                            setDate(newValue.toLocaleDateString())
+                        }}
+                        renderInput={(params) => <TextField {...params} />}
+                    />
 
-                        <DateTimePicker
-                            label="Date and time"
-                            value={date}
-                            onChange={(newValue) => {
-                                setDate(newValue.toLocaleDateString())
-                            }}
-                            renderInput={(params) => <TextField {...params} />}
-                        />
-
-                        <Button variant="contained" color="primary" type="submit">
-                            Add Note
-                        </Button>
-                    </form>
-                </Box>
-            </Modal>
-        </>
+                    <Button variant="contained" color="primary" type="submit">
+                        Add Note
+                    </Button>
+                </form>
+            </Box>
+        </Modal>
     )
 }
