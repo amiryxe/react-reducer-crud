@@ -1,6 +1,4 @@
 import { useState, useContext } from 'react'
-import Fab from '@mui/material/Fab'
-import AddIcon from '@mui/icons-material/Add'
 import Modal from '@mui/material/Modal'
 import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
@@ -20,8 +18,7 @@ const style = {
     p: 4,
 }
 
-export default function AddNote() {
-    const [showModal, setShowModal] = useState(false)
+export default function AddNote({ showModal, setShowModal }) {
     const [date, setDate] = useState(new Date().toLocaleDateString())
     const { dispatch } = useContext(MainContext)
 
@@ -60,9 +57,6 @@ export default function AddNote() {
 
     return (
         <>
-            <Fab color="primary" aria-label="add" onClick={() => setShowModal(true)}>
-                <AddIcon />
-            </Fab>
 
             <Modal
                 open={showModal}

@@ -1,31 +1,38 @@
+import { useState } from 'react'
 import NoteList from '../components/Notes/index'
 import SearchNote from '../components/Notes/Search'
 import Title from '../components/Notes/Title'
 import Grid from '@mui/material/Grid'
 import Container from '@mui/material/Container'
 import AddNote from '../components/Notes/Add'
+import Button from '@mui/material/Button'
+import AddIcon from '@mui/icons-material/Add'
 import './Notes.scss'
 
 export default function Notes() {
-    return (
-        <>
-            <Container maxWidth="md">
-                <Grid container style={{
-                    alignItems: 'center',
-                }}>
-                    <Grid item xs={4}>
-                        <Title />
-                    </Grid>
+    const [showModal, setShowModal] = useState(false)
 
-                    <Grid item xs={8}>
-                        <SearchNote />
-                    </Grid>
+    return (
+        <Container maxWidth="md">
+            <Grid container style={{
+                alignItems: 'center',
+            }}>
+                <Grid item xs={4}>
+                    <Title />
                 </Grid>
 
-                <NoteList />
-            </Container>
+                <Grid item xs={8}>
+                    <SearchNote />
+                </Grid>
+            </Grid>
 
-            <AddNote />
-        </>
+            <Button color="primary" onClick={() => setShowModal(true)}>
+                <AddIcon /> Add Note
+            </Button>
+
+            <NoteList />
+
+            <AddNote {...{ showModal, setShowModal }} />
+        </Container>
     )
 }
