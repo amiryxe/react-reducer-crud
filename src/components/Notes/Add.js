@@ -1,12 +1,12 @@
-import { useState, useContext } from 'react';
-import Fab from '@mui/material/Fab';
-import AddIcon from '@mui/icons-material/Add';
-import Modal from '@mui/material/Modal';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import { Button } from '@mui/material';
-import DateTimePicker from '@mui/lab/DateTimePicker';
-import MainContext from '../../context/mainContext';
+import { useState, useContext } from 'react'
+import Fab from '@mui/material/Fab'
+import AddIcon from '@mui/icons-material/Add'
+import Modal from '@mui/material/Modal'
+import Box from '@mui/material/Box'
+import TextField from '@mui/material/TextField'
+import { Button } from '@mui/material'
+import DateTimePicker from '@mui/lab/DateTimePicker'
+import MainContext from '../../context/mainContext'
 
 const style = {
     position: 'absolute',
@@ -18,24 +18,24 @@ const style = {
     boxShadow: 24,
     borderRadius: 2,
     p: 4,
-};
+}
 
 export default function AddNote() {
-    const [showModal, setShowModal] = useState(false);
-    const [date, setDate] = useState(new Date().toLocaleDateString());
-    const { dispatch } = useContext(MainContext);
+    const [showModal, setShowModal] = useState(false)
+    const [date, setDate] = useState(new Date().toLocaleDateString())
+    const { dispatch } = useContext(MainContext)
 
     const [values, setValues] = useState({
         title: '',
         subtitle: '',
         summary: '',
         date: '',
-    });
+    })
 
-    const handleClose = () => setShowModal(false);
+    const handleClose = () => setShowModal(false)
 
     const submitAddNoteHandler = e => {
-        e.preventDefault();
+        e.preventDefault()
 
         const payload = {
             id: Math.random(),
@@ -43,9 +43,9 @@ export default function AddNote() {
             subtitle: values.subtitle,
             description: values.summary,
             date: date,
-        };
+        }
 
-        dispatch({ type: 'ADD_NOTE', payload });
+        dispatch({ type: 'ADD_NOTE', payload })
 
         // reset form
         setValues({
@@ -53,7 +53,7 @@ export default function AddNote() {
             subtitle: '',
             summary: '',
             date: '',
-        });
+        })
 
         setShowModal(false)
     }
@@ -101,7 +101,7 @@ export default function AddNote() {
                             label="Date and time"
                             value={date}
                             onChange={(newValue) => {
-                                setDate(newValue.toLocaleDateString());
+                                setDate(newValue.toLocaleDateString())
                             }}
                             renderInput={(params) => <TextField {...params} />}
                         />
