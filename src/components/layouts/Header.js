@@ -7,11 +7,11 @@ export default function Header() {
         <Grid container style={{
             alignItems: 'center',
         }}>
-            <Grid item xs={4}>
+            <Grid item xs={5}>
                 <Title />
             </Grid>
 
-            <Grid item xs={8}>
+            <Grid item xs={7}>
                 <SearchNote />
             </Grid>
         </Grid>
