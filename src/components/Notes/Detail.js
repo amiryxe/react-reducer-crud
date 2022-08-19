@@ -1,6 +1,6 @@
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
+import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
+import Modal from '@mui/material/Modal'
 
 const style = {
     position: 'absolute',
@@ -12,10 +12,10 @@ const style = {
     boxShadow: 24,
     borderRadius: 2,
     p: 4,
-};
+}
 
 export default function NoteDetail({ status, setStatus }) {
-    const handleClose = () => setStatus(false);
+    const handleClose = () => setStatus(false)
 
     return (
         <Modal
