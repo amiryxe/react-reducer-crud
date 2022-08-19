@@ -5,6 +5,9 @@ import TextField from '@mui/material/TextField'
 import { Button } from '@mui/material'
 import DateTimePicker from '@mui/lab/DateTimePicker'
 import MainContext from '../../context/mainContext'
+import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 
 const style = {
     position: 'absolute',
@@ -89,14 +92,25 @@ export default function AddNote({ showModal, setShowModal }) {
                         onChange={(e) => setValues({ ...values, summary: e.target.value })}
                     />
 
-                    <DateTimePicker
+                    {/* <DesktopDatePicker
                         label="Date and time"
                         value={date}
                         onChange={(newValue) => {
                             setDate(newValue.toLocaleDateString())
                         }}
                         renderInput={(params) => <TextField {...params} />}
-                    />
+                    /> */}
+                    <LocalizationProvider dateAdapter={AdapterDayjs}>
+
+                        <DesktopDatePicker
+                            label="Date desktop"
+                            inputFormat="MM/DD/YYYY"
+                            value={date}
+                            onChange={(newValue) => {
+                                setDate(newValue.toLocaleDateString())
+                            }} renderInput={(params) => <TextField {...params} />}
+                        />
+                    </LocalizationProvider>
 
                     <Button variant="contained" color="primary" type="submit">
                         Add Note
