@@ -5,9 +5,6 @@ import TextField from '@mui/material/TextField'
 import { Button } from '@mui/material'
 import DateTimePicker from '@mui/lab/DateTimePicker'
 import MainContext from '../../context/mainContext'
-import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 
 const style = {
     position: 'absolute',
