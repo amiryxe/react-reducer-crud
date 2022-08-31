@@ -94,9 +94,9 @@ export default function AddNote({ showModal, setShowModal }) {
                     <LocalizationProvider dateAdapter={AdapterDayjs}>
                         <DatePicker
                             label="Basic example"
-                            value={value}
+                            value={date}
                             onChange={(newValue) => {
-                                setValue(newValue);
+                                setDate(newValue);
                             }}
                             renderInput={(params) => <TextField {...params} />}
                         />
