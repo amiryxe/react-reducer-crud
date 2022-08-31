@@ -4,6 +4,9 @@ import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
 import { Button } from '@mui/material'
 import MainContext from '../../context/mainContext'
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
+import { DatePicker } from '@mui/x-date-pickers/DatePicker'
 
 const style = {
     position: 'absolute',
@@ -88,7 +91,16 @@ export default function AddNote({ showModal, setShowModal }) {
                         onChange={(e) => setValues({ ...values, summary: e.target.value })}
                     />
 
-                    date picker
+                    <LocalizationProvider dateAdapter={AdapterDayjs}>
+                        <DatePicker
+                            label="Basic example"
+                            value={value}
+                            onChange={(newValue) => {
+                                setValue(newValue);
+                            }}
+                            renderInput={(params) => <TextField {...params} />}
+                        />
+                    </LocalizationProvider>
 
                     <Button variant="contained" color="primary" type="submit">
                         Add Note
