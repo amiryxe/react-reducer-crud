@@ -1,6 +1,7 @@
+import Grid from '@mui/material/Grid'
+
 import SearchNote from '../Notes/Search'
 import Title from '../Notes/Title'
-import Grid from '@mui/material/Grid'
 
 export default function Header() {
     return (
