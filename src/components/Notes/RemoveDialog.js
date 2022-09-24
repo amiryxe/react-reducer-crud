@@ -8,7 +8,6 @@ import DialogContentText from '@mui/material/DialogContentText'
 import DialogTitle from '@mui/material/DialogTitle'
 import Button from '@mui/material/Button'
 
-
 export default function RemoveDialog({ id, title, showDeleteAlert, setShowDeleteAlert }) {
     const { dispatch } = useContext(MainContext)
 
