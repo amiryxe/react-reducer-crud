@@ -1,7 +1,9 @@
 import { useContext } from "react"
 import MainContext from "../../context/mainContext"
-import NoteItem from "./Item"
+
 import Grid from '@mui/material/Grid'
+
+import NoteItem from "./Item"
 
 export default function NoteList() {
     const { noteList } = useContext(MainContext)
