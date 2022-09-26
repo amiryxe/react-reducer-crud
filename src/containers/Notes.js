@@ -6,7 +6,7 @@ import AddIcon from '@mui/icons-material/Add'
 
 import NoteList from '../components/Notes/index'
 import Header from '../components/layouts/Header'
-import AddNote from '../components/Notes/Add'
+import AddEdit from '../components/Notes/AddEdit'
 
 import './Notes.scss'
 
@@ -23,7 +23,7 @@ export default function Notes() {
 
             <NoteList />
 
-            <AddNote {...{ showModal, setShowModal }} />
+            <AddEdit {...{ showModal, setShowModal }} />
         </Container>
     )
 }
