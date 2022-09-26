@@ -48,7 +48,7 @@ export default function AddNote({ showModal, setShowModal, editData }) {
             id: Math.random(),
             title: values.title,
             subtitle: values.subtitle,
-            description: values.summary,
+            description: values.description,
             date: date,
         }
 
@@ -58,7 +58,7 @@ export default function AddNote({ showModal, setShowModal, editData }) {
         setValues({
             title: '',
             subtitle: '',
-            summary: '',
+            description: '',
             date: '',
         })
 
@@ -87,7 +87,7 @@ export default function AddNote({ showModal, setShowModal, editData }) {
                     <TextField
                         label="Subtitle"
                         variant="outlined"
-                        value={values.subject}
+                        value={values.subtitle}
                         onChange={(e) => setValues({ ...values, subtitle: e.target.value })}
                     />
 
@@ -95,8 +95,8 @@ export default function AddNote({ showModal, setShowModal, editData }) {
                         label="Summary"
                         multiline
                         maxRows={4}
-                        value={values.summary}
-                        onChange={(e) => setValues({ ...values, summary: e.target.value })}
+                        value={values.description}
+                        onChange={(e) => setValues({ ...values, description: e.target.value })}
                     />
 
                     <LocalizationProvider dateAdapter={AdapterDayjs}>
