@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import MainContext from '../../context/mainContext'
 
 import Modal from '@mui/material/Modal'
@@ -21,8 +21,9 @@ const style = {
     p: 4,
 }
 
-export default function AddNote({ showModal, setShowModal }) {
+export default function AddNote({ showModal, setShowModal, editData }) {
     const [date, setDate] = useState(new Date().toLocaleDateString())
+
     const { dispatch } = useContext(MainContext)
 
     const [values, setValues] = useState({
@@ -31,6 +32,12 @@ export default function AddNote({ showModal, setShowModal }) {
         summary: '',
         date: '',
     })
+
+    useEffect(() => {
+        if (editData) {
+            setValues(editData)
+        }
+    }, [editData])
 
     const handleClose = () => setShowModal(false)
 
