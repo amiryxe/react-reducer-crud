@@ -6,7 +6,7 @@ import CardActions from '@mui/material/CardActions'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 
-import NoteDetail from './Detail'
+import AddEdit from './AddEdit'
 import RemoveDialog from './RemoveDialog'
 
 export default function NoteItem({ data }) {
@@ -38,7 +38,8 @@ export default function NoteItem({ data }) {
                 <Button size="small" color="error" onClick={() => setShowDeleteAlert(true)}>
                     Delete
                 </Button>
-                <NoteDetail status={showModal} setStatus={setShowModal} />
+
+                <AddEdit {...{ showModal, setShowModal, editData: data }} />
             </CardActions>
         </Card>
     )
