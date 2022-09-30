@@ -113,6 +113,10 @@ export default function AddNote({ showModal, setShowModal, editData }) {
                     <Button variant="contained" color="primary" type="submit">
                         Add Note
                     </Button>
+
+                    <Button onClick={() => setShowModal(false)}>
+                        Cancel
+                    </Button>
                 </form>
             </Box>
         </Modal>
