@@ -1,12 +1,10 @@
-import Notes from './containers/Notes';
-import MainState from './context/MainState';
+import Notes from './containers/Notes'
+import MainState from './context/MainState'
 
-function App() {
+export default function App() {
   return (
     <MainState>
       <Notes />
     </MainState>
-  );
+  )
 }
-
-export default App;
