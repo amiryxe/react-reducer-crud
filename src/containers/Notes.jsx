@@ -17,8 +17,12 @@ export default function Notes() {
         <Container maxWidth="md">
             <Header />
 
-            <Button color="primary" onClick={() => setShowModal(true)}>
-                <AddIcon /> Add Note
+            <Button
+                color="primary"
+                startIcon={<AddIcon />}
+                onClick={() => setShowModal(true)}
+            >
+                Add Note
             </Button>
 
             <NoteList />
