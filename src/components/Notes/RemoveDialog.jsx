@@ -34,7 +34,7 @@ export default function RemoveDialog({ id, title, showDeleteAlert, setShowDelete
             <DialogActions>
                 <Button onClick={() => setShowDeleteAlert(false)}>Cancel</Button>
                 <Button color="error" onClick={handleDeleteNote} autoFocus>
-                    OK
+                    YES
                 </Button>
             </DialogActions>
         </Dialog>
